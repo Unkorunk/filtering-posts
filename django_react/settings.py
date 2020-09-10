@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'filtering_posts.apps.FilteringPostsConfig',
-    'rest_framework'
+    'rest_framework',
+    'frontend',
 ]
 
 MIDDLEWARE = [
