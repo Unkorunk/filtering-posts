@@ -4,6 +4,15 @@ var ReactDOM = require('react-dom');
 import Combobox from './Combobox'
 import Posts from './Posts'
 
+const styles = {
+    div: {
+        'backgroundColor': 'rgb(47, 58, 79)',
+        'borderRadius': '4px',
+        'padding': '1rem',
+        'color': 'white'
+    }
+}
+
 function App() {
     // generate array months
     const months = [
@@ -56,10 +65,18 @@ function App() {
 
     // render
     return (
-        <div>
-            <Combobox value={state.month} options={months} onChange={onChangeMonth} />
-            <Combobox value={state.year} options={years} onChange={onChangeYear} />
-            
+        <div style={styles.div}>
+            <div style={{'marginBottom': '1rem'}}>
+                <div style={{'display': 'inlineBlock', 'float': 'left'}}>Публикации</div>
+
+                <div style={{'display': 'inlineBlock', 'float': 'right'}}>
+                    <Combobox value={state.month} options={months} onChange={onChangeMonth} />
+                    <Combobox value={state.year} options={years} onChange={onChangeYear} />
+                </div>
+
+                <div style={{'clear': 'both'}}></div>
+            </div>
+
             <Posts posts={state.posts} />
         </div>
     );
